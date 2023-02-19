@@ -1,5 +1,6 @@
 #include "car.h"
 #include "point.h"
+#include "print.h"
 #include "scores.h"
 #include "string.h"
 #include <memory>
@@ -7,9 +8,14 @@
 double add(double a, double b) { return a + b; }
 int main() {
 
-  point p1{2.4, 5.6};
-  car c{"red", 120.6};
-  p1 = c;
-  std::cout << p1;
+  CU::string str("Yuliia");
+  str.insert(4, "Hi");
+  std::cout << str << std::endl;
+  str.erase(3, 2);
+  CU::string str1("Your wellcome");
+  std::cout << str << std::endl;
+  std::cout << CU::compare(str, str1) << std::endl;
+  str.append('T');
+  std::cout << str << std::endl;
   return 0;
 }
