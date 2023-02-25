@@ -28,6 +28,9 @@ public:
 
   explicit operator double() { return static_cast<double>(m_x); }
   double &operator[](size_t index);
+  bool operator==(const point &p2) const;
+
+  std::partial_ordering operator<=>(const point &p) const;
 
 private:
   double length() const;
@@ -38,7 +41,7 @@ private:
 
 inline std::ostream &operator<<(std::ostream &os, const point &p) {
 
-  os << "point: " << p.m_x << " " << p.m_y << "\n";
+  os << "point: " << p.m_x << " " << p.m_y << '\t' << p.length() << "\n";
   return os;
 }
 

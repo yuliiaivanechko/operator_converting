@@ -50,3 +50,19 @@ point &point::operator=(const point &p) {
   }
   return *this;
 }
+
+bool point::operator==(const point &p2) const {
+  return this->length() == p2.length();
+}
+
+std::partial_ordering point::operator<=>(const point &p) const {
+  if (this->length() < p.length()) {
+    return std::partial_ordering::less;
+  } else if (this->length() == p.length()) {
+    return std::partial_ordering::equivalent;
+  } else if (this->length() > p.length()) {
+    return std::partial_ordering::greater;
+  } else {
+    return std::partial_ordering::unordered;
+  }
+}
