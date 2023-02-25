@@ -1,4 +1,5 @@
 #include "car.h"
+#include "comp_string.h"
 #include "item.h"
 #include "number.h"
 #include "point.h"
@@ -10,12 +11,10 @@
 
 double add(double a, double b) { return a + b; }
 int main() {
-  point p1{3.5, 5.6};
-  point p2{7.6, 8.9};
-  std::cout << std::boolalpha;
-  std::cout << (p1 < p2) << std::endl;
-  std::cout << (p2 < p1) << std::endl;
-  std::cout << (p1 == p2) << std::endl;
-  std::cout << (p1 <= p2) << std::endl;
+  comp_string s1("dog");
+  comp_string s2("huy");
+
+  std::cout << (s1 == s2) << std::endl;
+
   return 0;
 }
